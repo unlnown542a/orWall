@@ -3,6 +3,8 @@
 # orWall
 
 Because real life is a Dystopia
+--
+ now by unknown542
 
 
 ## Website
@@ -25,9 +27,9 @@ Beware, we found out people are messing around and push the APK on Google Play, 
 
 If you find such an app, please contact us.
 
-### Coming soon
-- Support for other Onion Router applications (i2p)
-- Support for application dedicated stream (for Orbot)
+### New features
+- Support for i2p
+- No need for Orbot to insall. Just a binary tor and obfs4proxy, and privoxy
 
 ### External libraries
 - [super-command](https://github.com/dschuermann/superuser-commands) (Apache2) for root accesses
