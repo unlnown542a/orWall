@@ -99,17 +99,18 @@ public class WizardFragment extends Fragment {
         // Add some stuff on the very first Wizard page
         if (mPageNumber == 0) {
             ViewGroup main_content = (ViewGroup) rootView.findViewById(R.id.id_main_content);
-            final Iptables iptables = new Iptables(getActivity());
+            //final Iptables iptables = new Iptables(getActivity());
             // Extract scripts
-            InstallScripts installScripts = new InstallScripts(getActivity());
-            installScripts.run();
+            //InstallScripts installScripts = new InstallScripts(getActivity());
+            //installScripts.run();
 
             // init-script installation
             // install init as default behavior
-            Iptables.installInitScript(getActivity());
-            boolean enforceInit = Preferences.isEnforceInitScript(getActivity());
-            boolean initSupported = Iptables.initSupported();
+            //Iptables.installInitScript(getActivity());
+            //boolean enforceInit = Preferences.isEnforceInitScript(getActivity());
+            //boolean initSupported = Iptables.initSupported();
 
+            /*
             Switch initScript = new Switch(getActivity());
             initScript.setChecked( (enforceInit && initSupported) );
             initScript.setText(getString(R.string.wizard_init_script_text));
@@ -127,7 +128,7 @@ public class WizardFragment extends Fragment {
                 }
             });
 
-            main_content.addView(initScript);
+            main_content.addView(initScript);*/
 
             // Root status
             Switch rootStatus = new Switch(getActivity());
@@ -144,18 +145,23 @@ public class WizardFragment extends Fragment {
             main_content.addView(iptablesStatus);
 
             // Does current kernel support IPTables comments?
+            /*
             Switch iptablesComments = new Switch(getActivity());
             iptablesComments.setChecked(iptables.getSupportComment());
             iptablesComments.setEnabled(false);
             iptablesComments.setText(getString(R.string.wizard_init_ipt_comments_text));
             main_content.addView(iptablesComments);
+            */
 
             // Is orbot installed?
+            /*
             Switch orbotStatus = new Switch(getActivity());
-            orbotStatus.setChecked(Util.isOrbotInstalled(getActivity()));
-            orbotStatus.setEnabled(false);
+            orbotStatus.setEnabled(true);
             orbotStatus.setText(getString(R.string.wizard_orbot_status_text));
             main_content.addView(orbotStatus);
+            */
+            Switch orbotStatus = new Switch(getActivity());
+            orbotStatus.setEnabled(true);
 
         }
 

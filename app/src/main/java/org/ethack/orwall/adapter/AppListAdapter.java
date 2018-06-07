@@ -256,7 +256,7 @@ public class AppListAdapter extends ArrayAdapter {
                     @Override
                     public void onClick(View v) {
                         radioBypass.setEnabled(checkboxInternet.isChecked());
-                        radioTor.setEnabled(checkboxInternet.isChecked() && Util.isOrbotInstalled(context));
+                        radioTor.setEnabled(checkboxInternet.isChecked());
 
                         if (!radioBypass.isChecked() && !radioTor.isChecked()) {
                             if (radioTor.isEnabled()) {

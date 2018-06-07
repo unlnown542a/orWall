@@ -61,7 +61,7 @@ public class BackgroundProcess extends IntentService {
     }
 
     private void managePortal(boolean activate) {
-        Util.enableCaptiveDetection(activate, this);
+        //Util.enableCaptiveDetection(activate, this);
     }
 
     private void addRule(Long appUID, String appName, String onionType, Boolean localHost, Boolean localNetwork) {

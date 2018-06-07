@@ -14,13 +14,14 @@ import java.util.concurrent.TimeoutException;
 
 public class Util {
     public static boolean isOrbotInstalled(Context context) {
-        try {
+        /*try {
             PackageManager pm = context.getPackageManager();
             pm.getPackageInfo(Constants.ORBOT_APP_NAME, PackageManager.GET_ACTIVITIES);
             return true;
         } catch (PackageManager.NameNotFoundException e) {
             return false;
-        }
+        }*/
+            return true;
     }
 
     public static int getOrbotUID(Context context){
@@ -40,6 +41,7 @@ public class Util {
      * @param status boolean, true if we want to enable this probe.
      * @param context application context
      */
+    /*
     public static void enableCaptiveDetection(boolean status, Context context) {
         // TODO: find a way to disable it on android <4.4
         // TODO: we may want to get some setting writer directly through the API.
@@ -76,5 +78,5 @@ public class Util {
                 }
             }
         }
-    }
+    }*/
 }

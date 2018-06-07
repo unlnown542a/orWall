@@ -60,11 +60,11 @@ public class HomeFragment extends Fragment {
         Switch orwallStatus = (Switch) home.findViewById(R.id.orwall_status);
 
         // Status switches — most of them are read-only, as they just displays devices capabilities.
-        Switch status_initscript = (Switch) home.findViewById(R.id.status_initscript);
+        //Switch status_initscript = (Switch) home.findViewById(R.id.status_initscript);
         Switch status_root = (Switch) home.findViewById(R.id.status_root);
         Switch status_iptables = (Switch) home.findViewById(R.id.status_iptables);
-        Switch status_ipt_comments = (Switch) home.findViewById(R.id.status_ipt_comments);
-        Switch status_orbot = (Switch) home.findViewById(R.id.status_orbot);
+        //Switch status_ipt_comments = (Switch) home.findViewById(R.id.status_ipt_comments);
+        Switch status_orbot = (Switch) home.findViewById(R.id.status_iptables);
 
         // Buttons
         Button settings = (Button) home.findViewById(R.id.id_settings);
@@ -80,7 +80,6 @@ public class HomeFragment extends Fragment {
 
 
         orwallStatus.setChecked(Preferences.isOrwallEnabled(getActivity()));
-        // orWall might be deactivated. Let's test it!
         orwallStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,6 +90,7 @@ public class HomeFragment extends Fragment {
         // Set status switches in order to show the user what's working. Or not working.
 
         // Init script: try to install it and so on
+        /* fuck init scripts in /etc/ use other appslike: Init.d light
         InstallScripts installScripts = new InstallScripts(getActivity());
         installScripts.run();
         boolean enforceInit = Preferences.isEnforceInitScript(getActivity());
@@ -119,6 +119,7 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
+        */
         // Do we have root access ?
         if (RootCommands.rootAccessGiven()) {
             status_root.setChecked(true);
@@ -138,7 +139,7 @@ public class HomeFragment extends Fragment {
             home.findViewById(R.id.status_iptables_description).setVisibility(View.VISIBLE);
         }
 
-        status_ipt_comments.setChecked(iptables.getSupportComment());
+        //status_ipt_comments.setChecked(iptables.getSupportComment());
         // Is orbot installed?
         status_orbot.setChecked(Util.isOrbotInstalled(getActivity()));
 

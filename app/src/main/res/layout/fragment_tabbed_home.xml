@@ -82,6 +82,7 @@
             This part will give hints regarding orWall status.
             It's, more or less, the same thing we will see in the wizard first page.
              -->
+            <!--
             <Switch
                 android:id="@+id/status_initscript"
                 android:layout_width="fill_parent"
@@ -93,6 +94,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone" />
+            -->
 
             <Switch
                 android:id="@+id/status_root"
@@ -122,12 +124,14 @@
                 android:enabled="false"
                 android:text="@string/wizard_init_ipt_comments_text" />
 
+            <!--
             <Switch
                 android:id="@+id/status_orbot"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:enabled="false"
                 android:text="@string/wizard_orbot_status_text" />
+            -->
         </LinearLayout>
     </ScrollView>
 

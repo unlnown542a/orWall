@@ -53,12 +53,13 @@ public class Iptables {
 
     public int getOrbotUID(){
         if (_orbotUID == null)
-            _orbotUID = Util.getOrbotUID(context);
+            //_orbotUID = Util.getOrbotUID(context);
+            _orbotUID = 0;
         return _orbotUID;
     }
 
     public boolean isOrbotInstalled(){
-        return getOrbotUID() > 0;
+        return getOrbotUID() >= 0;
     }
 
     /**
@@ -357,7 +358,7 @@ public class Iptables {
         rules.add("-t nat -N ow_OUTPUT");
         // do not redirect localhost addresses
         rules.add("-t nat -A ow_OUTPUT -d 127.0.0.1/32 -j RETURN");
-        if (orbot_uid > 0){
+        if (orbot_uid > 0) {
             // do not redirect orbot
             rules.add(String.format(Locale.US,
                     "-t nat -A ow_OUTPUT -m owner --uid-owner %d -j RETURN%s",
